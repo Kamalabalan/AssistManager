@@ -1,0 +1,72 @@
+interface person{
+	public void eat();
+	public void walk();
+	public void getName();
+}
+class Employee{
+String place;
+	Employee(String place){
+		this.place=place;
+		System.out.println("i am working in "+place);
+	}
+	void display(){
+		System.out.println("i am working in "+place);
+	}
+}
+
+class Manager extends Employee implements person{
+String name;
+	Manager(String name,String place){
+		super(place);
+		this.name=name;
+
+	}
+	public void getName(){
+		System.out.println("My name is "+name);
+	}
+	void display(){
+		super.display();
+		System.out.println(name+ "is working at "+place);
+	}
+	public void eat(){
+		System.out.println("Now "+name+ "is eating");
+	}
+	public void walk(){
+		System.out.println("Now "+name+ "is not walk");
+	}
+}
+
+class AssistManager extends Employee implements person{
+String name;
+	AssistManager(String name,String place){
+	super(place);
+	this.name=name;
+
+	}
+	public void getName(){
+		System.out.println("My name is "+name);
+	}
+	void display(){
+		super.display();
+		System.out.println(name+ "is working at "+place);
+	}
+	public void eat(){
+		System.out.println("Now "+name+ "is  not eat");
+	}
+	public void walk(){
+		System.out.println("Now "+name+ "is walking");
+	}
+	public static void main(String args[]){
+		AssistManager a1=new AssistManager("abcd","jaffna");
+		Manager m1=new Manager("defg","colombo");
+		a1.getName();
+		a1.display();
+		a1.eat();
+		a1.walk();
+		m1.getName();
+		m1.display();
+		m1.eat();
+		m1.walk();
+	}
+}
+
